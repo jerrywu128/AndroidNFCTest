@@ -127,6 +127,7 @@ public class LaunchActivity extends AppCompatActivity {
                                 Intent intent2 = new Intent(this, getClass());
                                 intent2.setAction(NfcAdapter.ACTION_NDEF_DISCOVERED);
                                 intent2.putExtra(NfcAdapter.EXTRA_NDEF_MESSAGES, new NdefMessage[]{ndefMessage});
+
                                 ndef.connect();
                                 ndef.writeNdefMessage(ndefMessage);
                                 binding.textResult.setText("NFC write success");
